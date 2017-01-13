@@ -145,7 +145,7 @@ $(function() {
       <div class="row-fluid">
         <div id="text" class="span4">
     			<div class="well">
-    				<h4>text</h4><h2>MA_SURVEY</h2> <h4>to</h4> <h2>+61 428 030 701</h2>
+    				<h4>text</h4><h2>CSAT</h2> <h4>to</h4> <h2>+61 448 002 002</h2>
     			</div>
         </div>
 		    <div id="messageArea" class="span8">
