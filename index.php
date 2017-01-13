@@ -87,6 +87,7 @@ var Passive = 0;
 var Detractor = 0;
 
 function createNotice(t) {
+console.log(t);
 	$.ajax({
 		 crossDomain:true,
 		 url:urlJSON+"?time="+t,
