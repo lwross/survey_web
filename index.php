@@ -45,9 +45,9 @@ google.charts.load('current', {'packages':['gauge','corechart']});
          // Create the data table for Anthony's pizza.
   var data = google.visualization.arrayToDataTable([
             ['Category', 'Score'],
-            ['Supporter',Value1],
-            ['Passive',Value2],
-            ['Detractor',Value3],
+            ['Below Average',Value1],
+            ['Average',Value2],
+            ['Crystal Clear',Value3],
           ]);
 
           var options = {
@@ -160,7 +160,7 @@ $(function() {
       <hr>
 
       <footer>
-        <p>&copy; Salesforce Marketing Cloud 2016</p>
+        <p>&copy; Salesforce Marketing Cloud 2017</p>
       </footer>
     </div>
   </body>
