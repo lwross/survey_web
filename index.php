@@ -121,7 +121,7 @@ console.log(t);
 	n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
-(function() {
+$(function() {
 	n = setTimeout("createNotice(lastChecked)", 5000);
 	/*$("#messageArea").attr({
 		scrollTop: $("#messageArea").attr("scrollHeight")
