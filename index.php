@@ -78,7 +78,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
 <script>
 var lastChecked = "all";
 
-var urlJSON = "http://pub.s4.exacttarget.com/rxr1qmpxhuo";
+var urlJSON = "http://pub.s4.exacttarget.com/tss40r4joam";
 var c = 0;
 var t;
 var n;
@@ -121,7 +121,7 @@ console.log(t);
 	n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
-$(function() {
+(function() {
 	n = setTimeout("createNotice(lastChecked)", 5000);
 	/*$("#messageArea").attr({
 		scrollTop: $("#messageArea").attr("scrollHeight")
