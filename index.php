@@ -78,7 +78,8 @@ google.charts.load('current', {'packages':['gauge','corechart']});
 <script>
 var lastChecked = "all";
 
-var urlJSON = "http://pub.s4.exacttarget.com/tss40r4joam";
+var graphURL = "http://pub.s4.exacttarget.com/tss40r4joam";
+var detailURL = "http://pub.s4.exacttarget.com/wnar1q2ocnu";
 var c = 0;
 var t;
 var n;
@@ -90,7 +91,7 @@ function createNotice(t) {
 
 	$.ajax({
 		 crossDomain:true,
-		 url:urlJSON+"?time="+t,
+		 url:detailURL+"?time="+t,
 	     dataType: 'jsonp', 
 	     success:function(data){
 	         	$.each(data.result, function(i, result) {
@@ -102,7 +103,7 @@ function createNotice(t) {
 
 	$.ajax({
 		 crossDomain:true,
-		 url:urlJSON+"?time="+t,
+		 url:graphURL+"?time="+t,
 	     dataType: 'jsonp', 
 	     success:function(data){
 	         	$.each(data.result, function(i, result) {
