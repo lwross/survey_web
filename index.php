@@ -87,7 +87,19 @@ var Passive = 0;
 var Detractor = 0;
 
 function createNotice(t) {
-console.log(t);
+
+	$.ajax({
+		 crossDomain:true,
+		 url:urlJSON+"?time="+t,
+	     dataType: 'jsonp', 
+	     success:function(data){
+	         	$.each(data.result, function(i, result) {
+					$('<div class="alert alert-success">'+result.Message+'</div>').hide().prependTo('#messageArea').slideDown("slow");
+				})
+				lastChecked = data.lastChecked;
+		}
+	});
+
 	$.ajax({
 		 crossDomain:true,
 		 url:urlJSON+"?time="+t,
@@ -120,12 +132,20 @@ console.log(t);
 	
 	n = setTimeout("createNotice(lastChecked)", 5000);
 }
-
+/*
 $(function() {
 	n = setTimeout("createNotice(lastChecked)", 5000);
 	/*$("#messageArea").attr({
 		scrollTop: $("#messageArea").attr("scrollHeight")
 	}); */
+})
+*/
+
+$(function() {
+	n = setTimeout("createNotice(lastChecked)", 5000);
+	$("#messageArea").attr({
+		scrollTop: $("#messageArea").attr("scrollHeight")
+	});
 })
 	
 </script>
@@ -141,12 +161,31 @@ $(function() {
         </div>
       </div>
     </div>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Mobile Questions</a>
+        </div>
+      </div>
+    </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
         <div id="text" class="span4">
     			<div class="well">
-    				<h4>text</h4><h2>CSAT</h2> <h4>to</h4> <h2>+61 448 002 002</h2>
+    				<h4>text</h4><h2>QUESTION [message]</h2> <h4>to</h4> <h2>+61 428 030 701</h2>
+    			</div>
+        </div>
+		    <div id="messageArea" class="span8">
+        </div>
+      </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div id="text" class="span4">
+    			<div class="well">
+    				<h4>text</h4><h2>CSAT</h2> <h4>to</h4> <h2>0448 002 002</h2>
     			</div>
         </div>
 		    <div id="messageArea" class="span8">
