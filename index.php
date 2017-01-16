@@ -155,21 +155,7 @@ $(function() {
       </div>
     </div>
     
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="#">Mobile Questions</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div id="text" class="span4">
-        </div>
-		    <div id="messageArea" class="span8">
-        </div>
-      </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
@@ -183,6 +169,22 @@ $(function() {
             <div id="DonutChart">
             </div>
             </center>
+        </div>
+      </div>
+      
+          <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Mobile Questions</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div id="text" class="span4">
+        </div>
+		    <div id="messageArea" class="span8">
         </div>
       </div>
 
