@@ -132,14 +132,6 @@ function createNotice(t) {
 	
 	n = setTimeout("createNotice(lastChecked)", 5000);
 }
-/*
-$(function() {
-	n = setTimeout("createNotice(lastChecked)", 5000);
-	/*$("#messageArea").attr({
-		scrollTop: $("#messageArea").attr("scrollHeight")
-	}); */
-})
-*/
 
 $(function() {
 	n = setTimeout("createNotice(lastChecked)", 5000);
