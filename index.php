@@ -94,7 +94,7 @@ function createNotice(t) {
 	     dataType: 'jsonp', 
 	     success:function(data){
 	         	$.each(data.result, function(i, result) {
-					$('<div class="alert alert-success">'+result.Message+'</div>').hide().prependTo('#messageArea').slideDown("slow");
+					$('<div class="alert alert-success">'+result.FullResponse+'</div>').hide().prependTo('#messageArea').slideDown("slow");
 				})
 				lastChecked = data.lastChecked;
 		}
@@ -165,9 +165,6 @@ $(function() {
     <div class="container-fluid">
       <div class="row-fluid">
         <div id="text" class="span4">
-    			<div class="well">
-    				<h4>text</h4><h2>QUESTION [message]</h2> <h4>to</h4> <h2>+61 428 030 701</h2>
-    			</div>
         </div>
 		    <div id="messageArea" class="span8">
         </div>
