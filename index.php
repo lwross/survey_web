@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Mobile Surveys</title>
+    <title>Mobile Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -45,9 +45,9 @@ google.charts.load('current', {'packages':['gauge','corechart']});
          // Create the data table for Anthony's pizza.
   var data = google.visualization.arrayToDataTable([
             ['Category', 'Score'],
-            ['Below Average',Value1],
-            ['Average',Value2],
-            ['Crystal Clear',Value3],
+            ['Crystal Clear',Value1],
+            ['Dull Appearance',Value2],
+            ['Visible Rubbish',Value3],
           ]);
 
           var options = {
@@ -106,6 +106,7 @@ function createNotice(t) {
 		 url:graphURL+"?time="+t,
 	     dataType: 'jsonp', 
 	     success:function(data){
+	     Supporter = Passive = Detractor = 0;
 	         	$.each(data.result, function(i, result) {
             if (result.Response == "1") {
               Detractor++;
@@ -115,14 +116,8 @@ function createNotice(t) {
               Supporter++;
             }
 				})
-				lastChecked = data.lastChecked;
+			lastChecked = data.lastChecked;
 
-        /* debug */
-        /*
-        $('<div>'+Detractor+'</div>').hide().prependTo('#messageArea').slideDown("slow");
-        $('<div>'+Passive+'</div>').hide().prependTo('#messageArea').slideDown("slow");
-        $('<div>'+Supporter+'</div>').hide().prependTo('#messageArea').slideDown("slow");
-        */
 
         /* draw chart */
         if ((Detractor != 0) || (Passive != 0) || (Supporter != 0)) {
@@ -150,7 +145,7 @@ $(function() {
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="#">Mobile Survey</a>
+          <a class="brand" href="#">Mobile Survey - Please rate todays water quality at Frankston Beach</a>
         </div>
       </div>
     </div>
@@ -159,7 +154,7 @@ $(function() {
       <div class="row-fluid">
         <div id="text" class="span4">
     			<div class="well">
-    				<h4>text</h4><h2>CSAT</h2> <h4>to</h4> <h2>0448 002 002</h2>
+    				<h4>text</h4><h2>WATER</h2> <h4>to</h4> <h2>0448 002 002</h2>
     			</div>
         </div>
 		    <div id="messageAreaChart" class="span8">
