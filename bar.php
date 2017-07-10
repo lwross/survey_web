@@ -100,7 +100,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
-      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      var chart = new google.visualization.BarChart(document.getElementById("DonutChart"));
       chart.draw(view, options);
   }
   </script>
