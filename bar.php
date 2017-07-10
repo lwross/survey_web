@@ -47,9 +47,9 @@ google.charts.load('current', {'packages':['gauge','corechart']});
 
       var graphdata = [
         ["Element", "Density", { role: "style" } ],
-        ["Copper", Value1, "#b87333"],
-        ["Silver", Value2, "silver"],
-        ["Gold", Value3, "gold"]
+        ["Copper", 1, "#b87333"],
+        ["Silver", 2, "silver"],
+        ["Gold", 3, "gold"]
       ];
 
       $.each(rawdata, function(i, row) {
