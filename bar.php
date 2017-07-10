@@ -46,7 +46,10 @@ google.charts.load('current', {'packages':['gauge','corechart']});
     function drawBarChart(rawdata) {
 
       var graphdata = [
-        ["Element", "Votes", { role: "style" } ]
+        ["Element", "Density", { role: "style" } ],
+        ["Copper", 1, "#b87333"],
+        ["Silver", 2, "silver"],
+        ["Gold", 3, "gold"]
       ];
 
       $.each(rawdata, function(i, row) {
@@ -64,10 +67,10 @@ google.charts.load('current', {'packages':['gauge','corechart']});
                        2]);
 
       var options = {
-        title: "Audience Votes",
+        title: "Density of Precious Metals, in g/cm^3",
         width: 600,
-        height: 1200,
-        bar: {groupWidth: "90%"},
+        height: 400,
+        bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.BarChart(document.getElementById("DonutChart"));
