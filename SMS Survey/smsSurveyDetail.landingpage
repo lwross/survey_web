@@ -1,0 +1,21 @@
+%%=v(QUERYPARAMETER('callback'))=%%(
+%%[
+    SET @lastCheck = QUERYPARAMETER('time')
+    SET @checked = NOW()
+]%%
+{
+ "lastChecked": "%%=v(@checked)=%%",
+ "result":
+<script runat=server>
+ Platform.Load("core","1");
+ var QuestionsDE = DataExtension.Init("de_surveyresponsesdetail");
+ var filter = {Property:"ResponseDate",SimpleOperator:"greaterThan",Value:Variable.GetValue("@lastCheck")};
+ if (Variable.GetValue("@lastCheck")=="all"){
+  var data = QuestionsDE.Rows.Retrieve();
+ }
+ else{
+  var data = QuestionsDE.Rows.Retrieve(filter);
+ }
+ Write(Stringify(data));
+</script>
+})

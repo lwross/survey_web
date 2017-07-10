@@ -1,0 +1,17 @@
+%%=v(QUERYPARAMETER('callback'))=%%(
+%%[
+ SET @lastCheck = QUERYPARAMETER('time')
+ SET @checked = NOW()
+]%%
+{
+ "lastChecked": "%%=v(@checked)=%%",
+ "result":
+<script runat=server>
+ Platform.Load("core","1");
+ var SurveyDE = DataExtension.Init("de_surveyresponses");
+
+ var data = SurveyDE.Rows.Retrieve();
+
+ Write(Stringify(data));
+</script>
+})

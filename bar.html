@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" data-requiremodule="jQuery" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" data-requiremodule="jQuery" type="text/javascript"></script>
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -93,17 +93,17 @@ var teams = {1: 'Forty Two',
 
 function createNotice(t) {
 
-  $.ajax({
-     crossDomain:true,
-     url:graphURL+"?time="+t,
-       dataType: 'jsonp',
-       success:function(data){
-          lastChecked = data.lastChecked;
+	$.ajax({
+		 crossDomain:true,
+		 url:graphURL+"?time="+t,
+	     dataType: 'jsonp',
+	     success:function(data){
+			    lastChecked = data.lastChecked;
           google.charts.setOnLoadCallback(drawBarChart(data.result));
-       }
-  });
+		   }
+	});
 
-  n = setTimeout("createNotice(lastChecked)", 5000);
+	n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
 $(function() {
