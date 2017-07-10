@@ -10,14 +10,7 @@
     <!-- Le styles -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" data-requiremodule="jQuery" type="text/javascript"></script>
     <link href="./css/bootstrap.css" rel="stylesheet">
-    
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src=".js/html5shiv.js"></script>
-    <![endif]-->
-
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 google.charts.load('current', {'packages':['gauge','corechart']});
@@ -32,9 +25,18 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         ["Element", "Votes", { role: "style" } ]
       ];
 
-      $.each(rawdata, function(i, row) {
-        graphdata.push( [teams[row.Team], parseInt(row.VoteCount), "gold"]);
-      })
+
+      $.each(teams, function(i, teamrow) {
+        var voteCount = 0;
+        $.each(rawdata, function(j, rawrow) {
+          if (rawrow.Team == i) {
+            voteCount = rawrow.VoteCount;
+            return false;
+          }
+        });
+
+        graphdata.push( [teams[i], parseInt(voteCount), "gold"]);
+      });
 
       var data = google.visualization.arrayToDataTable(graphdata);
 
@@ -47,15 +49,15 @@ google.charts.load('current', {'packages':['gauge','corechart']});
                        2]);
 
       var options = {
-        title: "Hack to the Future Votes",
-        width: 1000,
+        //title: "Hack to the Future Votes",
+        //width: 1500,
         height: 800,
         bar: {groupWidth: "90%"},
         bars: 'horizontal',
         hAxis: { ticks: [] },
         legend: { position: "none" },
       };
-      var chart = new google.visualization.BarChart(document.getElementById("DonutChart"));
+      var chart = new google.visualization.BarChart(document.getElementById("Chart"));
       chart.draw(view, options);
   }
   </script>
@@ -64,10 +66,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
 var lastChecked = "all";
 
 // URL of graph JSON landing page
-//var graphURL = "http://pub.s4.exacttarget.com/tss40r4joam";
 var graphURL = "http://pub.s4.exacttarget.com/1fpgn10x51m";
-// URL of detail list JSON landing page
-var detailURL = "http://pub.s4.exacttarget.com/wnar1q2ocnu";
 var c = 0;
 var t;
 var n;
@@ -98,21 +97,14 @@ function createNotice(t) {
   n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
-
 $(function() {
   n = setTimeout("createNotice(lastChecked)", 5000);
 })
 
-
 </script>
+</head>
 
-   </head>
-
-  <body>
-
-  
-            <div id="DonutChart">
-            </div>
-
-  </body>
+<body>
+  <div id="Chart"></div>
+</body>
 </html>
