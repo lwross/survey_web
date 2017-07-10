@@ -87,13 +87,13 @@ google.charts.load('current', {'packages':['gauge','corechart']});
       ];
 
       
-
+/*
       $.each(rawdata, function(i, row) {
 
             graphdata.push([row.Team, row.VoteCount, "#b87333"]);
             
       })
-
+*/
       var data = google.visualization.arrayToDataTable(graphdata);
 
       var view = new google.visualization.DataView(data);
