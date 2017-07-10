@@ -82,7 +82,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         ["Element", "Density", { role: "style" } ],
         ["Copper", Value1, "#b87333"],
         ["Silver", Value2, "silver"],
-        ["Gold", Value13, "gold"]
+        ["Gold", Value3, "gold"]
       ]);
 
       var view = new google.visualization.DataView(data);
