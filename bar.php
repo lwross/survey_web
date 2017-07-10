@@ -39,40 +39,6 @@
 <script type="text/javascript">
 google.charts.load('current', {'packages':['gauge','corechart']});
 
-//Start: ******DONUT Chart***************//
- function drawDonutChart(Value1, Value2, Value3) {
-
-         // Create the data table for Anthony's pizza.
-  var data = google.visualization.arrayToDataTable([
-            ['Category', 'Score'],
-            ['Crystal Clear',Value1],
-            ['Dull Appearance',Value2],
-            ['Visible Rubbish',Value3],
-          ]);
-
-          var options = {
-            pieHole: 0.3,
-            pieSliceTextStyle: {
-            color: 'black',
-            },
-            legend: 'none',
-            backgroundColor: { fill:'transparent' },
-            slices: {
-              0: { color: '#66FD77' },
-              1: { color: '#FDF565' },
-              2: { color: '#FD6764' }
-            },
-            /*title: 'Survey Results' , */
-            width: 350,
-            height: 350,
-            chartArea: { width: '90%', height: '90%'},
-   };
-
-        var chart = new google.visualization.PieChart(document.getElementById('DonutChart'));
-        chart.draw(data, options);
-      }
-//End: ******DONUT Chart***************//
-
 </script>
 
 <script type="text/javascript">
@@ -86,14 +52,10 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         ["Gold", Value3, "gold"]
       ];
 
-      
-/*
       $.each(rawdata, function(i, row) {
-
-            graphdata.push([row.Team, row.VoteCount, "#b87333"]);
-            
+        graphdata.push([row.Team, row.VoteCount, "#b87333"]);
       })
-*/
+
       var data = google.visualization.arrayToDataTable(graphdata);
 
       var view = new google.visualization.DataView(data);
@@ -133,8 +95,6 @@ var Detractor = 0;
 
 function createNotice(t) {
 
-
-
 	$.ajax({
 		 crossDomain:true,
 		 url:graphURL+"?time="+t,
@@ -159,6 +119,9 @@ function createNotice(t) {
 	n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
+$(function() {
+  n = setTimeout("createNotice(lastChecked)", 5000);
+})
 
 
 </script>
