@@ -77,13 +77,24 @@ google.charts.load('current', {'packages':['gauge','corechart']});
 
 <script type="text/javascript">
 
-    function drawBarChart(Value1, Value2, Value3) {
-      var data = google.visualization.arrayToDataTable([
+    function drawBarChart(rawdata) {
+
+      var graphdata = [
         ["Element", "Density", { role: "style" } ],
         ["Copper", Value1, "#b87333"],
         ["Silver", Value2, "silver"],
         ["Gold", Value3, "gold"]
-      ]);
+      ];
+
+      
+
+      $.each(rawdata, function(i, row) {
+
+            graphdata.push([row.Team, row.VoteCount, "#b87333"]);
+            
+      })
+
+      var data = google.visualization.arrayToDataTable(graphdata);
 
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
@@ -109,7 +120,8 @@ google.charts.load('current', {'packages':['gauge','corechart']});
 var lastChecked = "all";
 
 // URL of graph JSON landing page
-var graphURL = "http://pub.s4.exacttarget.com/tss40r4joam";
+//var graphURL = "http://pub.s4.exacttarget.com/tss40r4joam";
+var graphURL = "http://pub.s4.exacttarget.com/1fpgn10x51m";
 // URL of detail list JSON landing page
 var detailURL = "http://pub.s4.exacttarget.com/wnar1q2ocnu";
 var c = 0;
@@ -121,17 +133,7 @@ var Detractor = 0;
 
 function createNotice(t) {
 
-	$.ajax({
-		 crossDomain:true,
-		 url:detailURL+"?time="+t,
-	     dataType: 'jsonp',
-	     success:function(data){
-	         	$.each(data.result, function(i, result) {
-					$('<div class="alert alert-success">'+result.FullResponse+'</div>').hide().prependTo('#messageArea').slideDown("slow");
-				})
-				lastChecked = data.lastChecked;
-		}
-	});
+
 
 	$.ajax({
 		 crossDomain:true,
@@ -150,25 +152,14 @@ function createNotice(t) {
 				})
 			lastChecked = data.lastChecked;
 
-
-        /* draw chart */
-        if ((Detractor != 0) || (Passive != 0) || (Supporter != 0)) {
-          //google.charts.setOnLoadCallback(drawDonutChart(Supporter,Passive,Detractor));
-        }
-
-        google.charts.setOnLoadCallback(drawBarChart(Supporter,Passive,Detractor));
+        google.charts.setOnLoadCallback(drawBarChart(data.result));
 		}
 	});
 
 	n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
-$(function() {
-	n = setTimeout("createNotice(lastChecked)", 5000);
-	$("#messageArea").attr({
-		scrollTop: $("#messageArea").attr("scrollHeight")
-	});
-})
+
 
 </script>
 
