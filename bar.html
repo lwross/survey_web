@@ -16,6 +16,7 @@
       body {
     background-image: url("Live_Results_Banner.png");
     background-repeat: no-repeat;
+    background-size: 100%;
 }
     </style>
 
@@ -62,6 +63,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         height: 800,
         bar: {groupWidth: "90%"},
         bars: 'horizontal',
+        fontSize : '24',
         hAxis: { ticks: [] },
         legend: { position: "none" },
         backgroundColor: { fill:'transparent' }
