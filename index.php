@@ -14,7 +14,7 @@
 
 <style type="text/css">
       body {
-    background-image: url("Live_Results_Banner.png");
+    background-image: url("Live_Results_Banner_Rev_1.png");
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -115,7 +115,7 @@ $(function() {
 </head>
 
 <body>
-  <br><br><br><br><br>
+  <br><br><br>
   <div id="Chart"></div>
 </body>
 </html>
