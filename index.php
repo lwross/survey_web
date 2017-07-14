@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hack to the Future</title>
+    <title>Mobile Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -14,7 +14,7 @@
 
 <style type="text/css">
       body {
-    background-image: url("bg.png");
+    background-image: url("Live_Results_Banner.png");
     background-repeat: no-repeat;
 }
     </style>
@@ -114,7 +114,7 @@ $(function() {
 </head>
 
 <body>
-  <br><br><br><br>
+  <br><br><br><br><br>
   <div id="Chart"></div>
 </body>
 </html>
