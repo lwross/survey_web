@@ -8,13 +8,13 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" data-requiremodule="jQuery" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" data-requiremodule="jQuery" type="text/javascript"></script>
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
 
 <style type="text/css">
       body {
-    background-image: url("bg.png");
+    background-image: url("Live_Results_Banner.png");
     background-repeat: no-repeat;
 }
     </style>
@@ -80,30 +80,29 @@ var c = 0;
 var t;
 var n;
 
-var teams = {1: 'Forty Two',
-             2: 'Kakou',
-             3: 'Powered By Coffee',
-             4: 'Lillie Fro',
-             5: 'Foundationeers',
-             6: 'Find Give Keep',
-             7: '50 Reefs',
-             8: 'Cloud Walkers',
+var teams = {1: 'Cloud Walkers',
+             2: 'Foundationeers',
+             3: 'Forty Two',
+             4: 'Kakou',
+             5: 'Powered By Coffee',
+             6: 'Lillie Fro',
+             7: 'Find Give Keep',
+             8: '50 Reefs',
              9: 'Eleu'};
-
 
 function createNotice(t) {
 
-	$.ajax({
-		 crossDomain:true,
-		 url:graphURL+"?time="+t,
-	     dataType: 'jsonp',
-	     success:function(data){
-			    lastChecked = data.lastChecked;
+  $.ajax({
+     crossDomain:true,
+     url:graphURL+"?time="+t,
+       dataType: 'jsonp',
+       success:function(data){
+          lastChecked = data.lastChecked;
           google.charts.setOnLoadCallback(drawBarChart(data.result));
-		   }
-	});
+       }
+  });
 
-	n = setTimeout("createNotice(lastChecked)", 5000);
+  n = setTimeout("createNotice(lastChecked)", 5000);
 }
 
 $(function() {
@@ -114,7 +113,7 @@ $(function() {
 </head>
 
 <body>
-  <br><br><br><br>
+  <br><br><br><br><br>
   <div id="Chart"></div>
 </body>
 </html>

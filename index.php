@@ -80,16 +80,15 @@ var c = 0;
 var t;
 var n;
 
-var teams = {1: 'Forty Two',
-             2: 'Kakou',
-             3: 'Powered By Coffee',
-             4: 'Lillie Fro',
-             5: 'Foundationeers',
-             6: 'Find Give Keep',
-             7: '50 Reefs',
-             8: 'Cloud Walkers',
+var teams = {1: 'Cloud Walkers',
+             2: 'Foundationeers',
+             3: 'Forty Two',
+             4: 'Kakou',
+             5: 'Powered By Coffee',
+             6: 'Lillie Fro',
+             7: 'Find Give Keep',
+             8: '50 Reefs',
              9: 'Eleu'};
-
 
 function createNotice(t) {
 
