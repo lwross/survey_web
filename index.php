@@ -17,6 +17,7 @@
     background-image: url("Live_Results_Banner_Rev_1.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: #29C1CB;
 }
     </style>
 
@@ -44,7 +45,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
           }
         });
 
-        graphdata.push( [teams[i], parseInt(voteCount), ""]);
+        graphdata.push( [teams[i], parseInt(voteCount), "stroke-color: #00A8B6;  stroke-width: 3; fill-color: #FFFFFF"]);
       });
 
       var data = google.visualization.arrayToDataTable(graphdata);
@@ -63,8 +64,14 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         height: 800,
         bar: {groupWidth: "90%"},
         bars: 'horizontal',
+        vAxis: {
+          textStyle: {
+            fontSize: 24,
+            color: '#ffffff'
+          }
+        },
         fontSize : '24',
-        hAxis: { ticks: [] },
+        hAxis: { ticks: []},
         legend: { position: "none" },
         backgroundColor: { fill:'transparent' }
       };
