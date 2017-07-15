@@ -61,7 +61,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
       var options = {
         //title: "Hack to the Future Votes",
         //width: 1500,
-        height: 800,
+        height: 900,
         bar: {groupWidth: "90%"},
         bars: 'horizontal',
         vAxis: {
@@ -69,6 +69,24 @@ google.charts.load('current', {'packages':['gauge','corechart']});
             fontSize: 24,
             color: '#ffffff'
           }
+        },
+        annotations: {
+          textStyle: {
+            fontSize: 38,
+            //bold: true,
+            // The color of the text.
+            color: '#FFFFFF',
+            // The color of the text outline.
+            auraColor: '#00A8B6',
+            // The transparency of the text.
+            opacity: 1
+
+          },
+          stem: {
+            color:'#29C1CB'
+          },
+          highContrast: false,
+          alwaysOutside: true
         },
         fontSize : '24',
         hAxis: { ticks: []},
@@ -99,7 +117,7 @@ var teams = {1: 'Cloud Walkers',
              8: '50 Reefs',
              9: 'Eleu'};
 
-function createNotice(t) {
+function renderChart(t) {
 
   $.ajax({
      crossDomain:true,
@@ -111,18 +129,16 @@ function createNotice(t) {
        }
   });
 
-  n = setTimeout("createNotice(lastChecked)", 5000);
+  n = setTimeout("renderChart(lastChecked)", 5000);
 }
 
 $(function() {
-  n = setTimeout("createNotice(lastChecked)", 2000);
+  n = setTimeout("renderChart(lastChecked)", 2000);
 })
 
 </script>
 </head>
-
 <body>
-  <br><br><br>
   <div id="Chart"></div>
 </body>
 </html>
