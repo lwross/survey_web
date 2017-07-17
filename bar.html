@@ -17,7 +17,7 @@
     background-image: url("Live_Results_Banner_Rev_1.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    background-color: #29C1CB;
+    background-color: #5DBDC8;
 }
     </style>
 
