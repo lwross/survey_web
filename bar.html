@@ -45,7 +45,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
           }
         });
 
-        graphdata.push( [teams[i], parseInt(voteCount), "stroke-color: #00A8B6;  stroke-width: 3; fill-color: #FFFFFF"]);
+        graphdata.push( [teams[i], parseInt(voteCount), "stroke-color: #00A8B6;  stroke-width: 0; fill-color: #FFFFFF"]);
       });
 
       var data = google.visualization.arrayToDataTable(graphdata);
@@ -62,7 +62,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
         //title: "Hack to the Future Votes",
         //width: 1500,
         height: 900,
-        bar: {groupWidth: "90%"},
+        bar: {groupWidth: "75%"},
         bars: 'horizontal',
         vAxis: {
           textStyle: {
@@ -77,7 +77,7 @@ google.charts.load('current', {'packages':['gauge','corechart']});
             // The color of the text.
             color: '#FFFFFF',
             // The color of the text outline.
-            auraColor: '#00A8B6',
+            //auraColor: '#00A8B6',
             // The transparency of the text.
             opacity: 1
 
@@ -139,6 +139,7 @@ $(function() {
 </script>
 </head>
 <body>
+  <br />
   <div id="Chart"></div>
 </body>
 </html>
