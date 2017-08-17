@@ -1,6 +1,6 @@
 <?php
-//$combination = strtoupper($_REQUEST['combination']);
-$combination = 'LWR';
+$combination = strtoupper($_REQUEST['combination']);
+//$combination = 'LWR';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
