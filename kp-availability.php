@@ -22,7 +22,7 @@ if ($obj->Data->Available) {
 	$result2 = curl_exec($ch2);
 	curl_close($ch2);
 	$obj2 = json_decode($result2);
-	print "Sorry $combination is not available.  Here are some alternatives: ";
+	print "Oops! combination $combination is unavailable.  Here are some alternatives: ";
 	//print_r($obj2->Data);
 	$suggestions = "";
 	foreach ($obj2->Data as $arr) {
