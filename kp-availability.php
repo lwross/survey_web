@@ -28,8 +28,11 @@ if ($obj->Data->Available) {
 	foreach ($obj2->Data as $arr) {
 		//print_r($arr->suggestions);
 		//print "xxxxxxxxx\n";
-		foreach ($arr->suggestions as $suggestion) {
-			$suggestions .= $suggestion->Combination . ", ";
+
+		if ("Framed" != $arr->suggestions->CombinationGroup) {
+			foreach ($arr->suggestions as $suggestion) {
+				$suggestions .= $suggestion->Combination . ", ";
+			}
 		}
 
 
