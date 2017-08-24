@@ -1,6 +1,6 @@
 <?php
 $combination = strtoupper($_REQUEST['combination']);
-//$combination = 'LWR';
+//$combination = 'MX5';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -29,7 +29,7 @@ if ($obj->Data->Available) {
 		//print_r($arr->suggestions);
 		//print "xxxxxxxxx\n";
 
-		if ("Framed" != $arr->suggestions->CombinationGroup) {
+		if ("Framed" != $arr->CombinationGroup) {
 			foreach ($arr->suggestions as $suggestion) {
 				$suggestions .= $suggestion->Combination . ", ";
 			}
