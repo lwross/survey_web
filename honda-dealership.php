@@ -7,6 +7,8 @@ curl_setopt($ch, CURLOPT_URL, "http://v0.postcodeapi.com.au/suburbs/$postcode.js
 $result = curl_exec($ch);
 curl_close($ch);
 
+print "http://v0.postcodeapi.com.au/suburbs/$postcode.json";
+
 $obj = json_decode($result);
 var_dump($obj->Data->Available);
 exit;
