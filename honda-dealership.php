@@ -9,7 +9,7 @@ curl_close($ch);
 
 
 $obj = json_decode($result);
-var_dump($obj[0]);
+//var_dump($obj[0]);
 
 $lat = $obj[0]->latitude;
 $long = $obj[0]->longitude;
@@ -24,7 +24,7 @@ $result2 = curl_exec($ch2);
 curl_close($ch2);
 $obj2 = json_decode($result2);
 //var_dump($obj2->dealers[0]->dealerName);
-//exit;
+
 $dealerName = $obj2->dealers[0]->dealerName;
 $dealerPhone = $obj2->dealers[0]->dealerAddresses[0]->phoneNumber;
 $dealerSuburb = $obj2->dealers[0]->suburb;
