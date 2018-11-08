@@ -31,6 +31,4 @@ $dealerSuburb = $obj2->dealers[0]->suburb;
 
 $dealerPhone = substr($dealerPhone, 11);
 
-print "Your nearest Honda dealership is $dealerName in $dealerSuburb.  You can call them on $dealerPhone";
-
 print "Alrighty. Well it's been great to meet you.  Keep an eye on your inbox for the brochure as promised.  Your nearest Honda dealership is $dealerName in $dealerSuburb.  Feel free to give call them on $dealerPhone to organise a test drive";
