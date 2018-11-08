@@ -29,6 +29,6 @@ $dealerName = $obj2->dealers[0]->dealerName;
 $dealerPhone = $obj2->dealers[0]->dealerAddresses[0]->phoneNumber;
 $dealerSuburb = $obj2->dealers[0]->suburb;
 
-$dealerPhone = substr($dealerPhone, 7);
+$dealerPhone = substr($dealerPhone, 6);
 
 print "Alrighty. Well it's been great to meet you.  Keep an eye on your inbox for the brochure as promised.  Your nearest Honda dealership is $dealerName in $dealerSuburb.  Feel free to call them on $dealerPhone to organise a test drive.";
