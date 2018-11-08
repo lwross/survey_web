@@ -10,7 +10,7 @@ curl_close($ch);
 print "http://v0.postcodeapi.com.au/suburbs/$postcode.json";
 
 $obj = json_decode($result);
-var_dump($obj->Data->Available);
+var_dump($obj);//->Data->Available);
 exit;
 
 if ($obj->Data->Available) {
