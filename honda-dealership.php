@@ -23,21 +23,12 @@ curl_setopt($ch2, CURLOPT_URL, "https://www.honda.com.au/content/honda/en/findde
 $result2 = curl_exec($ch2);
 curl_close($ch2);
 $obj2 = json_decode($result2);
-var_dump($obj2->dealers[0]);
-exit;
-print "Oops! combination $postcode is unavailable.  Here are some alternatives: ";
+//var_dump($obj2->dealers[0]->dealerName);
+//exit;
+$dealerName = $obj2->dealers[0]->dealerName;
+$dealerPhone = $obj2->dealers[0]->dealerAddresses[0]->phoneNumber;
+$dealerSuburb = $obj2->dealers[0]->suburb;
 
-$suggestions = "";
-foreach ($obj2->Data as $arr) {
+$dealerPhone = substr($dealerPhone, 11);
 
-    if ("Framed" != $arr->CombinationGroup) {
-        foreach ($arr->suggestions as $suggestion) {
-            $suggestions .= $suggestion->Combination . ", ";
-        }
-    }
-
-
-}
-$suggestions = substr($suggestions, 0, -2);
-print $suggestions;
-print ".  Please respond with your prefered alternative to proceed.";
+print "Your nearest Honda dealership is $dealerName in $dealerSuburb.  You can call them on $dealerPhone";
