@@ -23,7 +23,7 @@ curl_setopt($ch2, CURLOPT_URL, "https://www.honda.com.au/content/honda/en/findde
 $result2 = curl_exec($ch2);
 curl_close($ch2);
 $obj2 = json_decode($result2);
-var_dump($result2);
+var_dump($obj2->dealers[0]);
 exit;
 print "Oops! combination $postcode is unavailable.  Here are some alternatives: ";
 
